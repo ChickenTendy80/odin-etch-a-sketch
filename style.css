@@ -1,0 +1,13 @@
+#grid-container {
+        display: grid;
+        grid-template-columns: repeat(16, 1fr); /* 16 equal columns */
+        grid-template-rows: repeat(16, 1fr);    /* 16 equal rows */
+        width: 500px; /* Adjust as needed, squares will scale */
+        height: 500px; /* Adjust as needed, squares will scale */
+        border: 1px solid black;
+    }
+
+    .grid-square {
+        border: 1px solid lightgray;
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    }
