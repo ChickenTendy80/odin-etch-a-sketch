@@ -1,5 +1,5 @@
 const gridContainer = document.querySelector(".grid-container");
-const gridSize = 64; // Defines the number of squares per side
+const defaultGridSize = 16; // Defines the number of squares per side
 
 function createGrid(size) {
     // Clear existing grid if any
@@ -8,19 +8,31 @@ function createGrid(size) {
     for (let i = 0; i < size * size; i++) {
         const gridSquare = document.createElement("div");
         gridSquare.classList.add("grid-square");
-        gridSquare.style.width = 512/gridSize +"px";
-        gridSquare.style.height = 512/gridSize +"px";
+        gridSquare.style.width = 512/size +"px";
+        gridSquare.style.height = 512/size +"px";
         gridContainer.appendChild(gridSquare);
     }
 }
 
-// Call the function to create the 16x16 grid on page load
-createGrid(gridSize);
-
-const hovering = document.querySelectorAll(".grid-square");
-hovering.forEach(elt => {
-    elt.addEventListener("mouseover", () => {
-        //console.log("hovered");
-        elt.classList.add("hovered");
+function checkHover(){
+    const hovering = document.querySelectorAll(".grid-square");
+    hovering.forEach(elt => {
+        elt.addEventListener("mouseover", () => {
+            //console.log("hovered");
+            elt.classList.add("hovered");
+        });
     });
-});
+}
+
+// Call the function to create the 16x16 grid on page load
+createGrid(defaultGridSize);
+checkHover();
+
+const button = document.querySelector("button");
+
+button.addEventListener("click",() => {
+    const size = prompt("How many squares on each side?");
+    const gridSizeTemp = parseInt(size);
+    createGrid(gridSizeTemp);
+    checkHover();
+})
