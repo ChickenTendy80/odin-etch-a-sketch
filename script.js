@@ -1,5 +1,5 @@
 const gridContainer = document.querySelector(".grid-container");
-const gridSize = 16; // Defines the number of squares per side
+const gridSize = 64; // Defines the number of squares per side
 
 function createGrid(size) {
     // Clear existing grid if any
@@ -8,6 +8,8 @@ function createGrid(size) {
     for (let i = 0; i < size * size; i++) {
         const gridSquare = document.createElement("div");
         gridSquare.classList.add("grid-square");
+        gridSquare.style.width = 512/gridSize +"px";
+        gridSquare.style.height = 512/gridSize +"px";
         gridContainer.appendChild(gridSquare);
     }
 }

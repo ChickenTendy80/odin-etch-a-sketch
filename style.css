@@ -17,8 +17,8 @@ body {
 }
 
 .grid-square {
-    width: 32px; /* 512px / 16 = 32px */
-    height: 32px;
+    /*width: 32px;*/ /* 512px / 16 = 32px */
+    /*height: 32px;*/
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
     border: 1px solid #eee;
     background-color: white;
