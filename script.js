@@ -33,14 +33,12 @@ function checkColor(){
           //  elt.style.color = elt.value;
         //});
     //});
-    const coloredElements = document.getElementsByClassName("hovered");
+    const coloredElements = document.querySelector(".hovered");
 
     colorButton.forEach(elt => {
         elt.addEventListener("click", () => {
             console.log(elt.value);
-            for (let i = 0; i < coloredElements.length; i++) {
-                coloredElements[i].style.backgroundColor = elt.value; // Change to red
-            }
+            coloredElements.classList.add(elt.value);
         });
 
     });
