@@ -14,12 +14,13 @@ function createGrid(size) {
     }
 }
 
-function checkHover(){
+function checkHover(classItem){
     const hovering = document.querySelectorAll(".grid-square");
     hovering.forEach(elt => {
         elt.addEventListener("mouseover", () => {
             //console.log("hovered");
-            elt.classList.add("hovered");
+            elt.className = "grid-square";
+            elt.classList.add(classItem);
         });
     });
 }
@@ -27,29 +28,17 @@ function checkHover(){
 function checkColor(){
     const colorButton = document.querySelectorAll("button.color");
 
-    //colorButton.forEach(elt => {
-      //  elt.addEventListener("click", () => {
-        //    console.log("color change");
-          //  elt.style.color = elt.value;
-        //});
-    //});
-    const coloredElements = document.querySelectorAll(".hovered");
-
     colorButton.forEach(elt => {
         elt.addEventListener("click", () => {
-            console.log(elt.value);
-            coloredElements.forEach(block => {
-                block.classList.remove("hovered");
-                block.classList.add(elt.value);
-            });
+            //console.log(elt.value);
+            checkHover(elt.value);
         });
-
     });
 }
 
 // Call the function to create the 16x16 grid on page load
 createGrid(defaultGridSize);
-checkHover();
+checkHover("hovered");
 checkColor();
 
 const button = document.querySelector("button");
@@ -58,6 +47,6 @@ button.addEventListener("click",() => {
     const size = prompt("How many squares on each side?");
     const gridSizeTemp = parseInt(size);
     createGrid(gridSizeTemp);
-    checkHover();
+    checkHover("hovered");
     checkColor();
 })
