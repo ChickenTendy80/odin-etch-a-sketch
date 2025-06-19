@@ -24,9 +24,32 @@ function checkHover(){
     });
 }
 
+function checkColor(){
+    const colorButton = document.querySelectorAll("button.color");
+
+    //colorButton.forEach(elt => {
+      //  elt.addEventListener("click", () => {
+        //    console.log("color change");
+          //  elt.style.color = elt.value;
+        //});
+    //});
+    const coloredElements = document.getElementsByClassName("hovered");
+
+    colorButton.forEach(elt => {
+        elt.addEventListener("click", () => {
+            console.log(elt.value);
+            for (let i = 0; i < coloredElements.length; i++) {
+                coloredElements[i].style.backgroundColor = elt.value; // Change to red
+            }
+        });
+
+    });
+}
+
 // Call the function to create the 16x16 grid on page load
 createGrid(defaultGridSize);
 checkHover();
+checkColor();
 
 const button = document.querySelector("button");
 
