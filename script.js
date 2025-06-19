@@ -33,12 +33,15 @@ function checkColor(){
           //  elt.style.color = elt.value;
         //});
     //});
-    const coloredElements = document.querySelector(".hovered");
+    const coloredElements = document.querySelectorAll(".hovered");
 
     colorButton.forEach(elt => {
         elt.addEventListener("click", () => {
             console.log(elt.value);
-            coloredElements.classList.add(elt.value);
+            coloredElements.forEach(block => {
+                block.classList.remove("hovered");
+                block.classList.add(elt.value);
+            });
         });
 
     });

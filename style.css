@@ -2,6 +2,7 @@ body{
     text-align: center;
     min-height: 100vh;
     margin: 0;
+    padding: 36px;
     background-color: #f0f0f0;
 }
 
@@ -50,6 +51,7 @@ body{
     width: 32px;
     height: 32px;
     box-sizing: border-box;
+    border-radius: 8px;
     border: 1px solid black;
 }
 
