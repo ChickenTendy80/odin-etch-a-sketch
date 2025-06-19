@@ -59,4 +59,5 @@ button.addEventListener("click",() => {
     const gridSizeTemp = parseInt(size);
     createGrid(gridSizeTemp);
     checkHover();
+    checkColor();
 })
