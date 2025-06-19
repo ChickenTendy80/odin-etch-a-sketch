@@ -1,13 +1,29 @@
-#grid-container {
-        display: grid;
-        grid-template-columns: repeat(16, 1fr); /* 16 equal columns */
-        grid-template-rows: repeat(16, 1fr);    /* 16 equal rows */
-        width: 500px; /* Adjust as needed, squares will scale */
-        height: 500px; /* Adjust as needed, squares will scale */
-        border: 1px solid black;
-    }
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
 
-    .grid-square {
-        border: 1px solid lightgray;
-        box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    }
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 512px; /* 16 * 32px (size of each square) */
+    height: 512px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.grid-square {
+    width: 32px; /* 512px / 16 = 32px */
+    height: 32px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    border: 1px solid #eee;
+    background-color: white;
+}
+
+.hovered {
+    background-color: grey;
+}
